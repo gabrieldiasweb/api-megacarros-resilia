@@ -44,7 +44,7 @@ export async function selCarro ( req,res ){
 }
 export async function exbCarro ( req,res ){
     try{
-        const response = await databaseMetodosCarros.exibirCarro() 
+        const response = await databaseMetodosCarros.selecionarCarros() 
         res.status(201).json(response)
     }
     catch(e) {
