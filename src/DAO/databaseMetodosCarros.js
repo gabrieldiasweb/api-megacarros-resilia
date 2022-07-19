@@ -33,7 +33,7 @@ class databaseMetodosCarros {
     });
   }
   static updateCarro(carro, id) {
-    const query = ` UPDATE carros SET (modelo,preco) = (?,?) WHERE id = ?`;
+    const query = ` UPDATE carro SET (modelo,preco) = (?,?) WHERE id = ?`;
     const body = Object.values(carro);
     return new Promise((resolve, reject) => {
       Database.run(query, [carro.modelo, carro.preco, id], (e, result) => {
@@ -48,7 +48,7 @@ class databaseMetodosCarros {
     });
   }
   static selecionarCarro(id) {
-    const query = `SELECT * FROM carros WHERE id = ?`;
+    const query = `SELECT * FROM carro WHERE id = ?`;
     return new Promise((resolve, reject) => {
       Database.get(query, id, (e, result) => {
         if (e) {
@@ -59,8 +59,8 @@ class databaseMetodosCarros {
       });
     });
   }
-  static selecionarCarros(){
-    const query = `SELECT * FROM carros`
+  static selecionarCarro(){
+    const query = `SELECT * FROM carro`
     return new Promise((resolve, reject) => {
         Database.all(query, (e, rows) => {
             if (e) {
@@ -72,7 +72,7 @@ class databaseMetodosCarros {
     })
   }
   static deleteCarro(id){
-    const query = `DELETE FROM carros WHERE id = ?`
+    const query = `DELETE FROM carro WHERE id = ?`
     return new Promise((resolve, reject) => {
         Database.run(query, id, (e) => {
             if (e) {
