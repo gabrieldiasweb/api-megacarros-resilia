@@ -10,3 +10,12 @@ Escolhemos a arquitetura MVC para estruturar nosso código.*
 
 O projeto esta no Herolu, foi testado pelo INSOMNIA.
 
+# ➡️Rotas:
+
+Na minha API eu utilizei as seguintes rotas: 
+
+-routerCarros.get("/garagem",exbCarro)
+-routerCarros.get("/garagem/:id", selCarro)
+-routerCarros.post("/garagem", insrCarros)
+-routerCarros.put("/garagem/:id",updCarro)
+-routerCarros.delete("/garagem/:id", delCarro)
